@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom'
 import CartIcon from '../cart-icon/cart-icon.component';
 
 function Header() {
+    const[hidden, setHidden] = useState(true)
+
+    const cartDropChange = () =>{
+        setHidden(!hidden)
+
+    }
     return (
         <div className="header">
             <Link className='logo-container' to='/'>
@@ -22,9 +28,9 @@ function Header() {
                 <Link className='option' to='/contact'>
                     Contact
                 </Link>
-
+                <CartIcon cartDropChange={cartDropChange} />
             </div>
-            <CartIcon />
+            {hidden?null:<CartIcon />}
 
         </div>
     );

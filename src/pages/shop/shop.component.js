@@ -3,6 +3,7 @@ import CollectionPreview from '../../component/collection-preview/collection-pre
 import './shop.style.scss'
 import {useState} from 'react'
 import SHOP_DATA from './shop.data';
+import { Route } from 'react-router-dom';
 
 function ShopPage(){
 
@@ -11,7 +12,7 @@ function ShopPage(){
     })
     return (
         <div className="shop-page">
-            {shop.collections.map(({id,...otherCollectionProps})=><CollectionPreview key={id} {...otherCollectionProps}/>)}
+            {shop.collections.map(({id,...otherCollectionProps})=><CollectionPreview key={id} {...otherCollectionProps}/>)} 
         </div>
       );  
 }

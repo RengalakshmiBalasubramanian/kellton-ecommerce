@@ -9,12 +9,10 @@ function Directory() {
 
     useEffect(()=>{
         async function getProduct(){
-            const result = await axios("http://localhost:8080/e-commerce/read")
+            const result = await axios("http://localhost:8080/ecom-cb/read")
         
             setproducts({sections:result.data.data})
-
         }
-
         getProduct()
     },[])
 
